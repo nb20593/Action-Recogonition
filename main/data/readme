@@ -1,1 +1,5 @@
+In this folder the Resized and the normalized datasets will be stored
 
+There are two types of dataset stored in a pickle file
+Raw dataset - it will be stored with .p extension
+Flow dataset - it consist of flow_x and flow_y which are known to be as a optical flow features
