@@ -14,7 +14,7 @@ conda create --name <env_name> --file spec-file.txt
 ### Dataset
 KTH dataset comprises the videos of human actions boxing, handclapping, hand waving, jogging, running, and walking performed by six different people. These acts are carried out by 25 individuals in 4 settings: inside, outdoor with scale variation, outdoor with various clothing, and outdoor. Therefore, 25x4x6 = 600 videos make up the entire collection. The videos have a frame rate of 25 frames per second and a 160x120 resolution. On the website, you may check for more details about the dataset.[https://www.csc.kth.se/cvap/actions/]
 
-Create a folder named dataset and download all the action categories along with the sequence.txt file
+Download all the action categories boxing, handclapping, hand waving, jogging, running, and walking and put them in seperate folders inside dataset along with the sequence.txt file
 
 ### 3D CNN + optical flow
 Optical flow is a technique used to describe image motion. It is usually applied to a series of images that have a small time step between them, for example, video frames. Optical flow calculates a velocity for points within the images, and provides an estimation of where points could be in the next image sequence.
