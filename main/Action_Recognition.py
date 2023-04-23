@@ -573,7 +573,20 @@ def train(model, num_epochs, train_set, test_set, lr=1e-3, batch_size=32,
         
     return train_accuracy,test_accuracy
 if __name__ == "__main__":
-    
+    # creating the datasets
+    print("Making optical flow features for train dataset")
+    optflow_dataset(dataset="train")
+    print("Making raw_dataset features for train dataset")
+    raw_dataset(dataset="train")
+    print("Making optical flow features for test dataset")
+    optflow_dataset(dataset="test")
+    print("Making raw_dataset features for test dataset")
+    raw_dataset(dataset="test")
+    print("Making optical flow features for validation dataset")
+    optflow_dataset(dataset="validation")
+    print("Making raw_dataset features for validation dataset")
+    raw_dataset(dataset="validation")
+    # parsing the patha nd the location from the inputs given to the file
     parser = argparse.ArgumentParser(description="Block Frame&Flow ConvNet")
     parser.add_argument("--dataset_dir", type=str, default="data",
                         help="directory to dataset")
@@ -590,7 +603,7 @@ if __name__ == "__main__":
     parser.add_argument("--cuda", type=int, default=0,
                         help="whether to use cuda (default: 0)")
     args = parser.parse_args()
-
+    # if passing the arguments via console change the hardcoded values to args.{variablename}
     dataset_dir = args.dataset_dir
     batch_size = 64
     num_epochs = 50
@@ -628,7 +641,8 @@ if __name__ == "__main__":
           validate=True, resume=resume, flow=True, use_cuda=cuda)
     print(history)
     print(test_accuracy_val)
-
+    
+    # plotting the training and the test curve
     epochs = range(1,num_epochs + 1)
     plt.plot(epochs, history, 'g')
     plt.title('Training accuracy vs epoc')
@@ -640,22 +654,11 @@ if __name__ == "__main__":
     plt.title('Test accurcy vs epoch')
     plt.xlabel('Epochs')
     plt.ylabel('accuracy')
-    print("Making optical flow features for train dataset")
-    optflow_dataset(dataset="train")
-    print("Making raw_dataset features for train dataset")
-    raw_dataset(dataset="train")
-    print("Making optical flow features for test dataset")
-    optflow_dataset(dataset="test")
-    print("Making raw_dataset features for test dataset")
-    raw_dataset(dataset="test")
-    print("Making optical flow features for validation dataset")
-    optflow_dataset(dataset="validation")
-    print("Making raw_dataset features for validation dataset")
-    raw_dataset(dataset="validation")
     
-    
-    
+    # evaluation
     dataset_dir = args.dataset_dir
+    
+    # update the model name to evaluate the data on the trained model
     model_dir = "data/cnn_optical_flow_model_chckpts/model_epoch40.chkpt"
 
     print("Loading validation dataset")
