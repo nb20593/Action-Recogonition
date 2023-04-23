@@ -24,5 +24,11 @@ There are different types of algorithm for optical flow Dense Pyramid Lucas-Kana
 ### Architecture
 ![3d cnn + opticalflow.png](https://github.com/nb20593/Action-Recogonition/blob/main/3d%20cnn%20%2B%20opticalflow.png)
 
+### Training and Evaluation
+Change Batch_size, number of epoch and start epoch , Monitor the accuracy in every epoch
+![Train Accuracy.png](https://github.com/nb20593/Action-Recogonition/blob/main/Train%20Accuracy.png)
+
+To validate the data with the trained model select a model from model checkpoint and replace epoch40 in the code and update the model name 
+
 ### Results
-![Accuracy on validation set.png](https://github.com/nb20593/Action-Recogonition/blob/main/Accuracy%20on%20validation%20set.png)
+The accuracy of this model on the Validation set is 92.12%
