@@ -6,7 +6,9 @@ Python
 
 ### Prerequsites
 Install anaconda or install the necessary packages from spec-file.txt 
+
 or 
+
 conda create --name <env_name> --file spec-file.txt
 
 ### Dataset
