@@ -21,5 +21,8 @@ Optical flow is a technique used to describe image motion. It is usually applied
 
 There are different types of algorithm for optical flow Dense Pyramid Lucas-Kanade, Farneback, PCAFlow, SimpleFlow, RLOF, DeepFlow, DualTVL1. In this project we are using Farneback
 
+### Architecture
+![3d cnn + opticalflow.png](https://github.com/nb20593/Action-Recogonition/blob/main/3d%20cnn%20%2B%20opticalflow.png)
+
 ### Results
 ![Accuracy on validation set.png](https://github.com/nb20593/Action-Recogonition/blob/main/Accuracy%20on%20validation%20set.png)
