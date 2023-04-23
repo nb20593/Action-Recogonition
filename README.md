@@ -1,4 +1,1 @@
-# Action-Recogonition
-Kth -dataset
-
-Introduction
+### Introduction
